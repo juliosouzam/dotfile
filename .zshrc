@@ -81,13 +81,22 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$(yarn global bin):$PATH"
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+export TYPEORM_CONNECTION=postgres
+export TYPEORM_HOST=localhost
+export TYPEORM_USERNAME=postgres
+export TYPEORM_PASSWORD=admin
+export TYPEORM_DATABASE=greenco
+export TYPEORM_PORT=5432
+export TYPEORM_LOGGING=true
+export TYPEORM_MIGRATIONS_RUN=true
+export TYPEORM_ENTITIES=src/modules/**/infra/typeorm/entities/*.ts
+
+
+
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -111,15 +120,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-alias cra="yarn create react-app"
-alias rn="npx react-native"
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
